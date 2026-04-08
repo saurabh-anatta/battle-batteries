@@ -692,6 +692,89 @@
       },
       "block_order": ["left_image", "right_content"]
     },
+    "right_image_text": {
+      "type": "section",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "gap": 64,
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      },
+      "blocks": {
+        "left_content": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 24,
+            "width": "fill"
+          },
+          "blocks": {
+            "text_group": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "gap": 12,
+                "width": "fill"
+              },
+              "blocks": {
+                "heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Trusted by industry leaders</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "2rem",
+                    "line_height": "normal",
+                    "letter_spacing": "tight",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "description": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>A proud American Lithium battery brand, relied on by OEMs and pros across RV, marine, and off-grid power markets.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["heading", "description"]
+            },
+            "pills": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "<div style=\"display: flex; flex-wrap: wrap; gap: 12px; align-items: center;\"><img src=\"{{ 'button.svg' | asset_url }}\" alt=\"RV\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-2.svg' | asset_url }}\" alt=\"Trucking\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-3.svg' | asset_url }}\" alt=\"Oil &amp; Gas\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-4.svg' | asset_url }}\" alt=\"Marine\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-5.svg' | asset_url }}\" alt=\"Off-Grid Residential\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-6.svg' | asset_url }}\" alt=\"Industrial\" loading=\"lazy\" height=\"32\"></div>"
+              }
+            }
+          },
+          "block_order": ["text_group", "pills"]
+        },
+        "right_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/frame-1597880400-desktop-I6631051663978.png",
+            "image_ratio": "adapt",
+            "width": "fill"
+          }
+        }
+      },
+      "block_order": ["left_content", "right_image"]
+    },
     "product_carousel_tabs": {
       "type": "product-carousel-tabs",
       "settings": {
@@ -969,5 +1052,5 @@
       "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards", "left_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
+  "order": ["hero_carousel", "image_title_cards", "left_image_text", "right_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
 }
