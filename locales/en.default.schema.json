@@ -54,6 +54,7 @@
     "colors": "Colors",
     "collection_page": "Collection page",
     "complementary_products": "Complementary products must be set up using the Search & Discovery app. [Learn more](https://help.shopify.com/manual/online-store/search-and-discovery)",
+    "content": "Content",
     "content_layout": "Content layout",
     "content_width": "Content width only applies when the section width is set to full width.",
     "copyright": "Copyright",
@@ -82,6 +83,7 @@
     "layout": "Layout",
     "link": "Link",
     "link_padding": "Link padding",
+    "links": "Links",
     "localization": "Localization",
     "logo": "Logo",
     "manage_customer_accounts": "[Manage visibility](/admin/settings/customer_accounts) in customer account settings. Legacy accounts not supported.",
@@ -434,7 +436,8 @@
     "video_section": "Video",
     "view_all_button": "View all",
     "pills": "Pills",
-    "comparison_slider": "Comparison slider"
+    "comparison_slider": "Comparison slider",
+    "promo_bar": "Promo bar"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1174,7 +1177,18 @@
     "cs_slider_inner_color": "Slider inner color",
     "text_on_images": "Text on images",
     "x_position": "Horizontal position",
-    "y_position": "Vertical position"
+    "y_position": "Vertical position",
+    "primary_text": "Primary text",
+    "primary_link_text": "Link text",
+    "primary_link": "Link",
+    "location_text": "Location text",
+    "location_link": "Location link",
+    "commercial_text": "Commercial text",
+    "commercial_link": "Commercial link",
+    "show_location_link": "Show location link",
+    "show_commercial_link": "Show commercial link",
+    "phone_number": "Phone number",
+    "phone_link": "Phone link"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",

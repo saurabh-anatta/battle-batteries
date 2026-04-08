@@ -4944,3 +4944,59 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* =============================================
+   Header Phone CTA Pill
+   ============================================= */
+.header-phone-cta {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4F4F6;
+  border-radius: 48px;
+  padding: 4px 24px;
+  font-family: var(--font-heading--family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #151515;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header-phone-cta:hover {
+  opacity: 0.85;
+}
+
+@media screen and (min-width: 990px) {
+  .header-phone-cta {
+    display: flex;
+  }
+}
+
+/* =============================================
+   Footer 5-Column Grid Layout
+   When footer has exactly 5 top-level blocks,
+   override the default 4-col + spanning last child
+   to use a true 5-column layout on desktop.
+   ============================================= */
+@media screen and (min-width: 990px) {
+  .footer-content--isolated-grid-item-desktop:has(> :nth-child(5):last-child) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+  }
+
+  .footer-content--isolated-grid-item-desktop:has(> :nth-child(5):last-child) > :last-child {
+    grid-column: auto;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .footer-content--isolated-grid-item-desktop:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content--isolated-grid-item-desktop:has(> :nth-child(5):last-child) > :last-child {
+    grid-column: 1 / -1;
+  }
+}
