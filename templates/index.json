@@ -400,6 +400,298 @@
       },
       "block_order": ["header_group", "cards_row"]
     },
+    "left_image_text": {
+      "type": "section",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "gap": 64,
+        "section_width": "page-width",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      },
+      "blocks": {
+        "left_image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image-13-desktop-I8681196686811877.png",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "border_radius": 4
+          }
+        },
+        "right_content": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 24,
+            "width": "fill"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Battle Born gives you the power you need to get out there.</p>",
+                "width": "100%",
+                "max_width": "none",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2rem",
+                "line_height": "normal",
+                "letter_spacing": "tight",
+                "case": "none",
+                "color": "var(--color-foreground-heading)"
+              }
+            },
+            "feature_1": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_alignment": "flex-start",
+                "gap": 12,
+                "width": "fill"
+              },
+              "blocks": {
+                "feature_1_icon": {
+                  "type": "icon",
+                  "settings": {
+                    "icon": "check_box",
+                    "width": 16
+                  }
+                },
+                "feature_1_texts": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "column",
+                    "gap": 4,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "feature_1_title": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>A decade proven</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "normal",
+                        "letter_spacing": "loose",
+                        "case": "uppercase",
+                        "color": "var(--color-foreground-heading)"
+                      }
+                    },
+                    "feature_1_desc": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Reliable LiFePO4 performance and long life backed by experience.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)"
+                      }
+                    }
+                  },
+                  "block_order": ["feature_1_title", "feature_1_desc"]
+                }
+              },
+              "block_order": ["feature_1_icon", "feature_1_texts"]
+            },
+            "feature_2": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_alignment": "flex-start",
+                "gap": 12,
+                "width": "fill"
+              },
+              "blocks": {
+                "feature_2_icon": {
+                  "type": "icon",
+                  "settings": {
+                    "icon": "check_box",
+                    "width": 16
+                  }
+                },
+                "feature_2_texts": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "column",
+                    "gap": 4,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "feature_2_title": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Safety by design</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "normal",
+                        "letter_spacing": "loose",
+                        "case": "uppercase",
+                        "color": "var(--color-foreground-heading)"
+                      }
+                    },
+                    "feature_2_desc": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Built-in BMS & stable chemistry for safer, dependable power every time.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)"
+                      }
+                    }
+                  },
+                  "block_order": ["feature_2_title", "feature_2_desc"]
+                }
+              },
+              "block_order": ["feature_2_icon", "feature_2_texts"]
+            },
+            "feature_3": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_alignment": "flex-start",
+                "gap": 12,
+                "width": "fill"
+              },
+              "blocks": {
+                "feature_3_icon": {
+                  "type": "icon",
+                  "settings": {
+                    "icon": "check_box",
+                    "width": 16
+                  }
+                },
+                "feature_3_texts": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "column",
+                    "gap": 4,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "feature_3_title": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Proven at scale</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "normal",
+                        "letter_spacing": "loose",
+                        "case": "uppercase",
+                        "color": "var(--color-foreground-heading)"
+                      }
+                    },
+                    "feature_3_desc": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Trusted by adventurers worldwide for RV, marine and off-grid power.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)"
+                      }
+                    }
+                  },
+                  "block_order": ["feature_3_title", "feature_3_desc"]
+                }
+              },
+              "block_order": ["feature_3_icon", "feature_3_texts"]
+            },
+            "feature_4": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_alignment": "flex-start",
+                "gap": 12,
+                "width": "fill"
+              },
+              "blocks": {
+                "feature_4_icon": {
+                  "type": "icon",
+                  "settings": {
+                    "icon": "check_box",
+                    "width": 16
+                  }
+                },
+                "feature_4_texts": {
+                  "type": "group",
+                  "settings": {
+                    "content_direction": "column",
+                    "gap": 4,
+                    "width": "fill"
+                  },
+                  "blocks": {
+                    "feature_4_title": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>System engineering</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-heading--family)",
+                        "font_size": "0.75rem",
+                        "line_height": "normal",
+                        "letter_spacing": "loose",
+                        "case": "uppercase",
+                        "color": "var(--color-foreground-heading)"
+                      }
+                    },
+                    "feature_4_desc": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Intelligent power systems with smart monitoring & efficient output.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "font_size": "0.875rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "color": "var(--color-foreground)"
+                      }
+                    }
+                  },
+                  "block_order": ["feature_4_title", "feature_4_desc"]
+                }
+              },
+              "block_order": ["feature_4_icon", "feature_4_texts"]
+            }
+          },
+          "block_order": ["heading", "feature_1", "feature_2", "feature_3", "feature_4"]
+        }
+      },
+      "block_order": ["left_image", "right_content"]
+    },
     "product_carousel_tabs": {
       "type": "product-carousel-tabs",
       "settings": {
@@ -677,5 +969,5 @@
       "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
+  "order": ["hero_carousel", "image_title_cards", "left_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
 }
