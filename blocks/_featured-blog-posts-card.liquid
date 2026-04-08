@@ -94,7 +94,15 @@
     <div class="featured-blog-posts-card__content layout-panel-flex--column">
       <h4>{{ title }}</h4>
       {{ details }}
-      {{ description }}
+      {% if block_settings.show_description %}
+        {{ description }}
+      {% endif %}
+      {% if block_settings.show_read_more_button %}
+        <span class="featured-blog-posts-card__read-more">
+          <span>{{ block_settings.read_more_label }}</span>
+          <img src="{{ 'arrow-right-2.svg' | asset_url }}" alt="" width="20" height="20" loading="lazy">
+        </span>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -145,6 +153,24 @@
   .featured-blog-posts-card__content h4 {
     margin: 0;
   }
+
+  .featured-blog-posts-card__read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: 1rem;
+    line-height: 22px;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 1px;
+    pointer-events: auto;
+  }
+
+  .featured-blog-posts-card__read-more img {
+    display: block;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -185,6 +211,29 @@
       "step": 1,
       "unit": "px",
       "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:content.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:settings.show_description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_read_more_button",
+      "label": "t:settings.show_read_more_button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "t:settings.read_more_label",
+      "default": "Read more",
+      "visible_if": "{{ block.settings.show_read_more_button }}"
     },
     {
       "type": "header",

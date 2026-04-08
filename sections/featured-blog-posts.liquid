@@ -20,6 +20,15 @@
 >
   {% content_for 'block', id: 'static-blog-title', type: '_featured-blog-posts-title' %}
 
+  {% if section.settings.button_label != blank %}
+    <div class="featured-blog-posts__header-button-wrapper">
+      <a class="featured-blog-posts__header-button" href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }}
+        <img src="{{ 'arrow-right-2.svg' | asset_url }}" alt="" width="20" height="20" loading="lazy">
+      </a>
+    </div>
+  {% endif %}
+
   {% if section.settings.blog != blank and section.settings.blog.articles_count > 0 %}
     {% paginate section.settings.blog.articles by max_items %}
       {% assign section_articles = section.settings.blog.articles %}
@@ -58,6 +67,31 @@
   %}
 </div>
 
+{% stylesheet %}
+  .featured-blog-posts__header-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .featured-blog-posts__header-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: 1rem;
+    line-height: 22px;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 1px;
+  }
+
+  .featured-blog-posts__header-button img {
+    display: block;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:names.blog_posts",
@@ -82,6 +116,20 @@
       "type": "blog",
       "id": "blog",
       "label": "t:settings.blog"
+    },
+    {
+      "type": "header",
+      "content": "t:content.button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.button_link"
     },
     {
       "type": "header",

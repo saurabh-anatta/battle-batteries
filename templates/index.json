@@ -446,6 +446,94 @@
       },
       "block_order": ["tab_1", "tab_2", "tab_3", "tab_4", "tab_5"]
     },
+    "content_carousel": {
+      "type": "featured-blog-posts",
+      "settings": {
+        "layout_type": "carousel",
+        "post_limit": 6,
+        "columns": 4,
+        "columns_gap": 32,
+        "mobile_card_size": "60cqw",
+        "icons_style": "arrows_large",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 40,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 64,
+        "padding-block-end": 64,
+        "button_label": "Read our blog",
+        "button_link": "/blogs"
+      },
+      "blocks": {
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "static": true,
+          "settings": {
+            "text": "<h3>Power system education, built by engineers</h3>",
+            "width": "100%",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "color": "var(--color-foreground-heading)"
+          }
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 16,
+            "show_description": false,
+            "show_read_more_button": true,
+            "read_more_label": "Read more"
+          },
+          "blocks": {
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "square"
+              }
+            },
+            "title": {
+              "type": "_heading",
+              "static": true,
+              "settings": {
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "1rem",
+                "line_height": "tight",
+                "color": "var(--color-foreground-heading)",
+                "show_alignment": false
+              }
+            },
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "static": true,
+              "settings": {
+                "show_date": false,
+                "show_author": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "show_alignment": false
+              }
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "static": true,
+              "settings": {
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              }
+            }
+          }
+        }
+      }
+    },
     "testimonials": {
       "type": "testimonials",
       "settings": {
@@ -540,5 +628,5 @@
       "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs", "testimonials"]
+  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs", "content_carousel", "testimonials"]
 }
