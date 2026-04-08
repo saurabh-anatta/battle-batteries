@@ -399,7 +399,53 @@
         }
       },
       "block_order": ["header_group", "cards_row"]
+    },
+    "product_carousel_tabs": {
+      "type": "product-carousel-tabs",
+      "settings": {
+        "heading": "Explore Best Sellers",
+        "description": "Power lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reliably through the night",
+        "max_products": 4,
+        "columns": 4,
+        "columns_gap": 32,
+        "section_width": "page-width",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      },
+      "blocks": {
+        "tab_1": {
+          "type": "tab",
+          "settings": {
+            "label": "LiFePO\u2084 Batteries"
+          }
+        },
+        "tab_2": {
+          "type": "tab",
+          "settings": {
+            "label": "Smart LiFePO\u2084 Batteries"
+          }
+        },
+        "tab_3": {
+          "type": "tab",
+          "settings": {
+            "label": "Inverter Power"
+          }
+        },
+        "tab_4": {
+          "type": "tab",
+          "settings": {
+            "label": "Solar Integration"
+          }
+        },
+        "tab_5": {
+          "type": "tab",
+          "settings": {
+            "label": "Alternator Charging"
+          }
+        }
+      },
+      "block_order": ["tab_1", "tab_2", "tab_3", "tab_4", "tab_5"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards"]
+  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs"]
 }

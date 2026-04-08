@@ -438,7 +438,9 @@
     "pills": "Pills",
     "comparison_slider": "Comparison slider",
     "promo_bar": "Promo bar",
-    "hero_carousel": "Hero carousel"
+    "hero_carousel": "Hero carousel",
+    "product_carousel_tabs": "Product carousel tabs",
+    "tab": "Tab"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1195,7 +1197,9 @@
     "button_label": "Button label",
     "button_link": "Button link",
     "subheading": "Subheading",
-    "toggle_overlay": "Image overlay"
+    "toggle_overlay": "Image overlay",
+    "tab_label": "Tab label",
+    "max_products": "Max products"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",
