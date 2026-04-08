@@ -54,7 +54,352 @@
         }
       },
       "block_order": ["slide_1", "slide_2", "slide_3"]
+    },
+    "image_title_cards": {
+      "type": "section",
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 40,
+        "section_width": "page-width",
+        "section_height": "",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      },
+      "blocks": {
+        "header_group": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill"
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Explore Power Solutions</p>",
+                "width": "100%",
+                "max_width": "none",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2rem",
+                "line_height": "normal",
+                "letter_spacing": "tight",
+                "case": "none",
+                "color": "var(--color-foreground-heading)"
+              }
+            },
+            "description": {
+              "type": "text",
+              "settings": {
+                "text": "<p>At Battle Born Batteries, our goal is to power your ideal RV experience. We build our lithium-ion RV batteries to perform better, last longer, and provide the deliverable power</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)"
+              }
+            }
+          },
+          "block_order": ["heading", "description"]
+        },
+        "cards_row": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-start",
+            "gap": 32,
+            "width": "fill"
+          },
+          "blocks": {
+            "card_1": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "card_1_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Life PO4 Batteries</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "card_1_image": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-I66318686631828.png",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "border_radius": 12
+                  }
+                },
+                "card_1_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Life PO4 batteries built for reliable power</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["card_1_title", "card_1_image", "card_1_desc"]
+            },
+            "card_2": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "card_2_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Charging & Power</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "card_2_image": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-I66318686631837.png",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "border_radius": 12
+                  }
+                },
+                "card_2_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Charging and power conversion components</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["card_2_title", "card_2_image", "card_2_desc"]
+            },
+            "card_3": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "card_3_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Solar Panels</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "card_3_image": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-I66318686631846.png",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "border_radius": 12
+                  }
+                },
+                "card_3_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Solar components for off-grid power systems</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["card_3_title", "card_3_image", "card_3_desc"]
+            },
+            "card_4": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "card_4_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Monitoring & Control</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "card_4_image": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-I66318686631855.png",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "border_radius": 12
+                  }
+                },
+                "card_4_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Smart system monitoring and control</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["card_4_title", "card_4_image", "card_4_desc"]
+            },
+            "card_5": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 10,
+                "width": "fill"
+              },
+              "blocks": {
+                "card_5_title": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Complete Systems</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)"
+                  }
+                },
+                "card_5_image": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-I66318686631864.png",
+                    "image_ratio": "square",
+                    "width": "fill",
+                    "border_radius": 12
+                  }
+                },
+                "card_5_desc": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Integrated power systems designed to work together.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)"
+                  }
+                }
+              },
+              "block_order": ["card_5_title", "card_5_image", "card_5_desc"]
+            }
+          },
+          "block_order": ["card_1", "card_2", "card_3", "card_4", "card_5"]
+        }
+      },
+      "block_order": ["header_group", "cards_row"]
     }
   },
-  "order": ["hero_carousel"]
+  "order": ["hero_carousel", "image_title_cards"]
 }
