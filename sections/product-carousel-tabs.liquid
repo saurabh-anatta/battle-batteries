@@ -161,7 +161,7 @@
                 <div class="product-carousel-tabs__card-content">
                   <div class="product-carousel-tabs__card-details">
                     <h3 class="product-carousel-tabs__card-title">
-                      <span>{{ 'onboarding.product_title' | t }}</span>
+                      <span>{{ 'placeholders.product_title' | t }}</span>
                     </h3>
                     <div class="product-carousel-tabs__price">
                       <span class="product-carousel-tabs__price-current">{{ 9999 | money }}</span>
@@ -189,7 +189,7 @@
               <div class="product-carousel-tabs__card-content">
                 <div class="product-carousel-tabs__card-details">
                   <h3 class="product-carousel-tabs__card-title">
-                    <span>{{ 'onboarding.product_title' | t }}</span>
+                    <span>{{ 'placeholders.product_title' | t }}</span>
                   </h3>
                   <div class="product-carousel-tabs__price">
                     <span class="product-carousel-tabs__price-current">{{ 9999 | money }}</span>
@@ -204,6 +204,8 @@
     {%- endif -%}
   </div>
 </product-carousel-tabs>
+
+<script src="{{ 'product-carousel-tabs.js' | asset_url }}" type="module" defer></script>
 
 {% stylesheet %}
   .product-carousel-tabs__inner {
@@ -460,19 +462,27 @@
   }
 
   .product-carousel-tabs__quickview {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-heading--family);
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.375;
     color: #005695;
-    text-decoration: underline;
+    text-decoration: none;
     background: none;
-    border: none;
-    padding: 0;
+    border: 1px solid #005695;
+    border-radius: 0;
+    padding: 0 0 1px 0;
     cursor: pointer;
     position: relative;
     z-index: 2;
     align-self: flex-start;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &:focus-visible {
       outline: 2px solid #005695;
@@ -521,67 +531,6 @@
     }
   }
 {% endstylesheet %}
-
-{% javascript %}
-  import { Component } from '@theme/component';
-
-  class ProductCarouselTabs extends Component {
-    connectedCallback() {
-      super.connectedCallback();
-      this.tabButtons = this.querySelectorAll('[role="tab"]');
-      this.tabPanels = this.querySelectorAll('[role="tabpanel"]');
-    }
-
-    handleTabClick(event) {
-      const clickedTab = event.currentTarget;
-      const tabIndex = clickedTab.getAttribute('data-tab-index');
-
-      for (const tab of this.tabButtons) {
-        const isActive = tab.getAttribute('data-tab-index') === tabIndex;
-        tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        tab.classList.toggle('product-carousel-tabs__tab--active', isActive);
-      }
-
-      for (const panel of this.tabPanels) {
-        const isActive = panel.getAttribute('data-tab-index') === tabIndex;
-        panel.hidden = !isActive;
-        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-      }
-    }
-
-    handleTabKeydown(event) {
-      const tabs = Array.from(this.tabButtons);
-      const currentIndex = tabs.indexOf(event.currentTarget);
-      let newIndex;
-
-      switch (event.key) {
-        case 'ArrowRight':
-          event.preventDefault();
-          newIndex = (currentIndex + 1) % tabs.length;
-          break;
-        case 'ArrowLeft':
-          event.preventDefault();
-          newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-          break;
-        case 'Home':
-          event.preventDefault();
-          newIndex = 0;
-          break;
-        case 'End':
-          event.preventDefault();
-          newIndex = tabs.length - 1;
-          break;
-        default:
-          return;
-      }
-
-      tabs[newIndex].focus();
-      tabs[newIndex].click();
-    }
-  }
-
-  customElements.define('product-carousel-tabs', ProductCarouselTabs);
-{% endjavascript %}
 
 {% schema %}
 {
@@ -641,8 +590,8 @@
       "id": "section_width",
       "label": "t:settings.section_width",
       "options": [
-        { "value": "page-width", "label": "t:options.page_width" },
-        { "value": "full-width", "label": "t:options.full_width" }
+        { "value": "page-width", "label": "t:options.page" },
+        { "value": "full-width", "label": "t:options.full" }
       ],
       "default": "page-width"
     },
