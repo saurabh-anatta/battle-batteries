@@ -437,7 +437,8 @@
     "view_all_button": "View all",
     "pills": "Pills",
     "comparison_slider": "Comparison slider",
-    "promo_bar": "Promo bar"
+    "promo_bar": "Promo bar",
+    "hero_carousel": "Hero carousel"
   },
   "options": {
     "above_carousel": "Above carousel",
@@ -1188,7 +1189,13 @@
     "show_location_link": "Show location link",
     "show_commercial_link": "Show commercial link",
     "phone_number": "Phone number",
-    "phone_link": "Phone link"
+    "phone_link": "Phone link",
+    "trust_text": "Trust text",
+    "show_trust_badge": "Trust badge",
+    "button_label": "Button label",
+    "button_link": "Button link",
+    "subheading": "Subheading",
+    "toggle_overlay": "Image overlay"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",

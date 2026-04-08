@@ -8,6 +8,53 @@
  * ------------------------------------------------------------
  */
  {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero_carousel": {
+      "type": "hero-carousel",
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "slide_height": "medium"
+      },
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "image_1": "shopify://shop_images/image-5-desktop-I663925663885.png",
+            "heading": "Conquer Every Climate.",
+            "subheading": "Reliable lithium power in the harshest conditions.",
+            "trust_text": "Trusted by over 5 million users",
+            "show_trust_badge": true,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "heading": "Built to Last",
+            "subheading": "Premium lithium batteries for every adventure.",
+            "show_trust_badge": false,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "heading": "Power Without Limits",
+            "subheading": "Go further with reliable energy solutions.",
+            "show_trust_badge": false,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["slide_1", "slide_2", "slide_3"]
+    }
+  },
+  "order": ["hero_carousel"]
 }
