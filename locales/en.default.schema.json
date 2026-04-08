@@ -425,6 +425,7 @@
     "summary": "Summary",
     "swatches": "Swatches",
     "testimonials": "Testimonials",
+    "testimonial": "Testimonial",
     "text": "Text",
     "title": "Title",
     "typography": "Typography",
@@ -1199,7 +1200,15 @@
     "subheading": "Subheading",
     "toggle_overlay": "Image overlay",
     "tab_label": "Tab label",
-    "max_products": "Max products"
+    "max_products": "Max products",
+    "star_rating": "Star rating",
+    "star_label": "Rating label",
+    "quote": "Quote",
+    "reviewer_name": "Reviewer name",
+    "reviewer_label": "Reviewer label",
+    "product_name": "Product name",
+    "category": "Category",
+    "active_tab_color": "Active tab color"
   },
   "text_defaults": {
     "accordion_heading": "Accordion heading",

@@ -445,7 +445,100 @@
         }
       },
       "block_order": ["tab_1", "tab_2", "tab_3", "tab_4", "tab_5"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "star_rating": "4.6",
+        "star_label": "Stars",
+        "heading": "400,000+ LiFePO4 Battery Packs In the Field",
+        "description": "Power Lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reilably through the night",
+        "background_color": "#F2F2F2",
+        "active_tab_color": "#081D4D",
+        "section_width": "full-width",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      },
+      "blocks": {
+        "tab_rv": {
+          "type": "tab",
+          "settings": {
+            "label": "RV"
+          }
+        },
+        "tab_marine": {
+          "type": "tab",
+          "settings": {
+            "label": "Marine"
+          }
+        },
+        "tab_trucking": {
+          "type": "tab",
+          "settings": {
+            "label": "Trucking"
+          }
+        },
+        "tab_industrial": {
+          "type": "tab",
+          "settings": {
+            "label": "Industrial"
+          }
+        },
+        "tab_lead_acid": {
+          "type": "tab",
+          "settings": {
+            "label": "vs. Lead-Acid"
+          }
+        },
+        "tab_american": {
+          "type": "tab",
+          "settings": {
+            "label": "American Company"
+          }
+        },
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "\"A reliable RV power setup means thinking about your entire system\"",
+            "reviewer_name": "Dr. Denis Phares",
+            "reviewer_label": "Verified Reviewer",
+            "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
+            "category": "RV"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "That\u2019s where my passion for coffee really took root. Once again, I found myself camping.",
+            "reviewer_name": "Mt. McKinley",
+            "reviewer_label": "Verified Reviewer",
+            "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
+            "category": "RV"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I\u2019ve got over 70 and have never had one of these batteries go bad",
+            "reviewer_name": "Rick Harrison",
+            "reviewer_label": "Verified Reviewer",
+            "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
+            "category": "RV"
+          }
+        },
+        "testimonial_4": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "\"A reliable RV power setup means thinking about your entire system\"",
+            "reviewer_name": "Dr. Denis Phares",
+            "reviewer_label": "Verified Reviewer",
+            "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
+            "category": "RV"
+          }
+        }
+      },
+      "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs"]
+  "order": ["hero_carousel", "image_title_cards", "product_carousel_tabs", "testimonials"]
 }
