@@ -109,10 +109,12 @@
                       <div class="product-carousel-tabs__rating">
                         <div class="product-carousel-tabs__stars" aria-hidden="true">
                           {%- assign star_rating = rating_value.rating | round: 1 -%}
+                          {%- assign star_rating_ceil = star_rating | ceil -%}
+                          {%- assign star_rating_floor = star_rating | floor -%}
                           {%- for i in (1..5) -%}
                             {%- if i <= star_rating -%}
                               <svg class="product-carousel-tabs__star product-carousel-tabs__star--full" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0.5L10.163 5.3725L15.5 5.9275L11.501 9.5275L12.652 14.8L8 12.0725L3.348 14.8L4.499 9.5275L0.5 5.9275L5.837 5.3725L8 0.5Z" fill="#E8952F"/></svg>
-                            {%- elsif i == star_rating | ceil and star_rating != star_rating | floor -%}
+                            {%- elsif i == star_rating_ceil and star_rating != star_rating_floor -%}
                               <svg class="product-carousel-tabs__star product-carousel-tabs__star--half" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="half-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"><stop offset="50%" stop-color="#E8952F"/><stop offset="50%" stop-color="#D1D5DB"/></linearGradient></defs><path d="M8 0.5L10.163 5.3725L15.5 5.9275L11.501 9.5275L12.652 14.8L8 12.0725L3.348 14.8L4.499 9.5275L0.5 5.9275L5.837 5.3725L8 0.5Z" fill="url(#half-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }})"/></svg>
                             {%- else -%}
                               <svg class="product-carousel-tabs__star product-carousel-tabs__star--empty" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0.5L10.163 5.3725L15.5 5.9275L11.501 9.5275L12.652 14.8L8 12.0725L3.348 14.8L4.499 9.5275L0.5 5.9275L5.837 5.3725L8 0.5Z" fill="#D1D5DB"/></svg>
