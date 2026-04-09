@@ -55,6 +55,16 @@
       },
       "block_order": ["slide_1", "slide_2", "slide_3"]
     },
+    "trust_badge": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"display:flex;justify-content:center;align-items:center\"><picture><source media=\"(max-width:749px)\" srcset=\"{{ 'frame-48098271-2.svg' | asset_url }}\"><img src=\"{{ 'frame-48098271.svg' | asset_url }}\" alt=\"Proud American Company\" width=\"264\" height=\"40\" loading=\"lazy\"><\/picture><\/div>",
+        "color_scheme": "scheme-1",
+        "section_width": "page-width",
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      }
+    },
     "image_title_cards": {
       "type": "section",
       "settings": {
@@ -1047,5 +1057,5 @@
       "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
     }
   },
-  "order": ["hero_carousel", "image_title_cards", "left_image_text", "right_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
+  "order": ["hero_carousel", "trust_badge", "image_title_cards", "left_image_text", "right_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
 }
