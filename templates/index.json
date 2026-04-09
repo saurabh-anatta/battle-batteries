@@ -701,6 +701,7 @@
         "vertical_alignment": "center",
         "gap": 64,
         "section_width": "page-width",
+        "color_scheme": "scheme-2",
         "padding-block-start": 0,
         "padding-block-end": 0
       },
@@ -725,12 +726,12 @@
                 "heading": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Trusted by industry leaders</p>",
+                    "text": "<p>Unstoppable Power Solutions. Backed by An American Brand.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
-                    "font_size": "2rem",
+                    "font_size": "1.5rem",
                     "line_height": "normal",
                     "letter_spacing": "tight",
                     "case": "none",
@@ -740,7 +741,7 @@
                 "description": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>A proud American Lithium battery brand, relied on by OEMs and pros across RV, marine, and off-grid power markets.</p>",
+                    "text": "<p>Assembled and tested in the U.S. with a focus on quality, safety and long-term reliability</p>",
                     "width": "100%",
                     "max_width": "none",
                     "type_preset": "custom",
@@ -749,25 +750,19 @@
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
-                    "color": "var(--color-foreground)"
+                    "color": "var(--color-foreground-heading)"
                   }
                 }
               },
               "block_order": ["heading", "description"]
-            },
-            "pills": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "<div style=\"display: flex; flex-wrap: wrap; gap: 12px; align-items: center;\"><img src=\"{{ 'button.svg' | asset_url }}\" alt=\"RV\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-2.svg' | asset_url }}\" alt=\"Trucking\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-3.svg' | asset_url }}\" alt=\"Oil &amp; Gas\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-4.svg' | asset_url }}\" alt=\"Marine\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-5.svg' | asset_url }}\" alt=\"Off-Grid Residential\" loading=\"lazy\" height=\"32\"><img src=\"{{ 'button-6.svg' | asset_url }}\" alt=\"Industrial\" loading=\"lazy\" height=\"32\"></div>"
-              }
             }
           },
-          "block_order": ["text_group", "pills"]
+          "block_order": ["text_group"]
         },
         "right_image": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/frame-1597880400-desktop-I6631051663978.png",
+            "image": "shopify://shop_images/frame-1597880400-desktop-I86912469663978.png",
             "image_ratio": "adapt",
             "width": "fill"
           }
