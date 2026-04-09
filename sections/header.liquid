@@ -1,8 +1,8 @@
 {% liquid
-  assign order = 'logo,menu,localization,search,drawer_search,actions'
+  assign order = 'logo,menu,localization,drawer_search,actions'
 
   if shop.customer_accounts_enabled
-    assign order = 'drawer_search,logo,menu,localization,search,actions'
+    assign order = 'drawer_search,logo,menu,localization,actions'
   endif
 
   assign rows = 'top,bottom' | split: ','
@@ -57,42 +57,26 @@
     content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'navigation_bar', transparent: transparent
   endcapture
 
-  capture actions
-    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, section: section
-  endcapture
-
   if shop.customer_accounts_enabled
     assign search_class = 'search-action--hidden-on-drawer'
   endif
 
-  # Handle localization positioning
-  if section.settings.localization_position == 'left'
-    if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,search,localization,menu,actions'
-      else
-        assign order = 'logo,search,localization,menu,drawer_search,actions'
-      endif
-    else
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,localization,menu,search,actions'
-      else
-        assign order = 'logo,localization,menu,search,drawer_search,actions'
-      endif
-    endif
-  else
-    if section.settings.search_position == 'left'
-      if shop.customer_accounts_enabled
-        assign order = 'drawer_search,logo,search,menu,localization,actions'
-      else
-        assign order = 'logo,search,menu,localization,drawer_search,actions'
-      endif
-    endif
-  endif
-  capture search
+  capture search_in_actions
     render 'search', style: search_style, class: search_class, display_style: section.settings.actions_display_style
   endcapture
 
+  capture actions
+    render 'header-actions', customer_account_menu: section.settings.customer_account_menu, display_style: section.settings.actions_display_style, section: section, search_html: search_in_actions
+  endcapture
+
+  # Handle localization positioning
+  if section.settings.localization_position == 'left'
+    if shop.customer_accounts_enabled
+      assign order = 'drawer_search,logo,localization,menu,actions'
+    else
+      assign order = 'logo,localization,menu,drawer_search,actions'
+    endif
+  endif
   # Skip drawer search under specific conditions:
   # Always render if search_row is bottom
   # Don't render when shop.customer_accounts_enabled is false and search_position is left and search_style is not none

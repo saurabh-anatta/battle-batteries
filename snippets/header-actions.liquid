@@ -61,6 +61,9 @@
       {{- section.settings.phone_number -}}
     </a>
   {% endif %}
+  {% if search_html != blank %}
+    {{ search_html }}
+  {% endif %}
   {% if shop.customer_accounts_enabled %}
     {% liquid
       assign account_actions_style = ''
