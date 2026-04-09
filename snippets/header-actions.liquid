@@ -520,6 +520,7 @@
   }
 
   header-actions {
+    --header-actions-gap: 64px;
     display: flex;
 
     @media screen and (max-width: 749px) {
@@ -529,7 +530,7 @@
 
   @media screen and (min-width: 750px) {
     .header-actions--text {
-      gap: 64px;
+      gap: var(--header-actions-gap);
     }
 
     .header-actions__text-style {
