@@ -50,6 +50,8 @@ class HeroCarouselComponent extends HTMLElement {
     }
 
     this.#bindEvents(signal);
+
+    requestAnimationFrame(() => this.#positionPauseButton(0));
   }
 
   disconnectedCallback() {
@@ -224,6 +226,8 @@ class HeroCarouselComponent extends HTMLElement {
       thumbnails[i].classList.toggle('hero-carousel__thumbnail--active', i === index);
     }
 
+    this.#positionPauseButton(index);
+
     for (let i = 0; i < progressBars.length; i++) {
       const bar = progressBars[i];
       bar.classList.remove('hero-carousel__progress-fill--active');
@@ -349,6 +353,29 @@ class HeroCarouselComponent extends HTMLElement {
       if (pauseIcon) pauseIcon.style.display = 'block';
       if (playIcon) playIcon.style.display = 'none';
     }
+  }
+
+  /**
+   * Position pause button centered over the active thumbnail
+   * @param {number} index
+   */
+  #positionPauseButton(index) {
+    const pauseBtn = this.querySelector('[data-hero-pause]');
+    if (!pauseBtn) return;
+
+    const thumbnailsContainer = this.querySelector('.hero-carousel__thumbnails');
+    if (!thumbnailsContainer) return;
+
+    const thumbnails = this.querySelectorAll('[data-hero-thumbnail]');
+    const activeThumb = thumbnails[index];
+    if (!activeThumb) return;
+
+    const containerRect = thumbnailsContainer.getBoundingClientRect();
+    const thumbRect = activeThumb.getBoundingClientRect();
+    const thumbCenter = thumbRect.left - containerRect.left + thumbRect.width / 2;
+    const btnHalf = pauseBtn.offsetWidth / 2;
+
+    thumbnailsContainer.style.setProperty('--pause-btn-left', `${thumbCenter - btnHalf}px`);
   }
 
   #updateAriaLive() {
