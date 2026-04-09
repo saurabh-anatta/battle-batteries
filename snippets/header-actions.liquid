@@ -49,21 +49,23 @@
   {% endif %}
   {{- block.shopify_attributes -}}
 >
-  {% if section.settings.phone_number != blank %}
-    {% liquid
-      assign phone_digits = section.settings.phone_number | remove: '.' | remove: '-' | remove: ' '
-    %}
-    <a
-      class="header-phone-cta"
-      href="tel:{{ phone_digits }}"
-      aria-label="{{ 'accessibility.phone_cta' | t: phone_number: section.settings.phone_number }}"
-    >
-      {{- section.settings.phone_number -}}
-    </a>
-  {% endif %}
-  {% if search_html != blank %}
-    {{ search_html }}
-  {% endif %}
+  <div class="header-actions__phone-search">
+    {% if section.settings.phone_number != blank %}
+      {% liquid
+        assign phone_digits = section.settings.phone_number | remove: '.' | remove: '-' | remove: ' '
+      %}
+      <a
+        class="header-phone-cta"
+        href="tel:{{ phone_digits }}"
+        aria-label="{{ 'accessibility.phone_cta' | t: phone_number: section.settings.phone_number }}"
+      >
+        {{- section.settings.phone_number -}}
+      </a>
+    {% endif %}
+    {% if search_html != blank %}
+      {{ search_html }}
+    {% endif %}
+  </div>
   {% if shop.customer_accounts_enabled %}
     {% liquid
       assign account_actions_style = ''
@@ -529,6 +531,12 @@
     @media screen and (max-width: 749px) {
       justify-self: flex-end;
     }
+  }
+
+  .header-actions__phone-search {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 
   @media screen and (min-width: 750px) {
