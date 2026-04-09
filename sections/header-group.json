@@ -21,7 +21,7 @@
         "show_commercial_link": true,
         "commercial_text": "Commercial Sales",
         "color_scheme": "scheme-5",
-        "section_width": "full-width",
+        "section_width": "page-width",
         "padding-block-start": 11,
         "padding-block-end": 11
       }
