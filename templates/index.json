@@ -72,7 +72,7 @@
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "flex-start",
         "gap": 40,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "section_height": "",
         "padding-block-start": 64,
         "padding-block-end": 64
