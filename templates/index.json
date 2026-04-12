@@ -944,7 +944,7 @@
               "type": "_featured-blog-posts-image",
               "static": true,
               "settings": {
-                "image_ratio": "square"
+                "image_ratio": "landscape"
               }
             },
             "title": {
