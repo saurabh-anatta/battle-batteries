@@ -780,12 +780,22 @@
           "block_order": ["text_group"]
         },
         "right_image": {
-          "type": "image",
+          "type": "group",
           "settings": {
-            "image": "shopify://shop_images/frame-1597880400-desktop-I86912469663978.png",
-            "image_ratio": "adapt",
+            "content_direction": "column",
             "width": "fill"
-          }
+          },
+          "blocks": {
+            "image_block": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/frame-1597880400-desktop-I86912469663978.png",
+                "image_ratio": "adapt",
+                "width": "fill"
+              }
+            }
+          },
+          "block_order": ["image_block"]
         }
       },
       "block_order": ["left_content", "right_image"]
