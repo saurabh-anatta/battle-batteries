@@ -424,13 +424,23 @@
       },
       "blocks": {
         "left_image": {
-          "type": "image",
+          "type": "group",
           "settings": {
-            "image": "shopify://shop_images/image-13-desktop-I8681196686811877.png",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "border_radius": 4
-          }
+            "content_direction": "column",
+            "width": "fill"
+          },
+          "blocks": {
+            "image_block": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/image-13-desktop-I8681196686811877.png",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "border_radius": 4
+              }
+            }
+          },
+          "block_order": ["image_block"]
         },
         "right_content": {
           "type": "group",
