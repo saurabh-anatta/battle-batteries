@@ -72,7 +72,7 @@
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "flex-start",
         "gap": 40,
-        "section_width": "full-width",
+        "section_width": "page-width",
         "section_height": "",
         "padding-block-start": 64,
         "padding-block-end": 64
@@ -109,7 +109,7 @@
               "settings": {
                 "text": "<p>At Battle Born Batteries, our goal is to power your ideal RV experience. We build our lithium-ion RV batteries to perform better, last longer, and provide the deliverable power</p>",
                 "width": "100%",
-                "max_width": "normal",
+                "max_width": "none",
                 "alignment": "center",
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
