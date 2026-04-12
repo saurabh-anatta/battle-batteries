@@ -717,13 +717,13 @@
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
+        "horizontal_alignment": "space-between",
         "vertical_alignment": "center",
         "gap": 64,
         "section_width": "page-width",
         "color_scheme": "scheme-2",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 40,
+        "padding-block-end": 40
       },
       "blocks": {
         "left_content": {
@@ -783,7 +783,7 @@
           "type": "group",
           "settings": {
             "content_direction": "column",
-            "width": "fill"
+            "width": "fit-content"
           },
           "blocks": {
             "image_block": {
@@ -791,7 +791,7 @@
               "settings": {
                 "image": "shopify://shop_images/frame-1597880400-desktop-I86912469663978.png",
                 "image_ratio": "adapt",
-                "width": "fill"
+                "width": "fit-content"
               }
             }
           },
