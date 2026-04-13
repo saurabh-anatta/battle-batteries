@@ -806,12 +806,12 @@
                 "heading": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Trusted by industry leaders</p>",
+                    "text": "<p>Unstoppable Power Solutions. Backed by An American Brand.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "type_preset": "custom",
                     "font": "var(--font-heading--family)",
-                    "font_size": "2rem",
+                    "font_size": "1.5rem",
                     "line_height": "body-normal",
                     "letter_spacing": "tight",
                     "case": "none",
@@ -821,7 +821,7 @@
                 "description": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>A proud American Lithium battery brand, relied on by OEMs and pros across RV, marine, and off-grid power markets.</p>",
+                    "text": "<p>Assembled and tested in the U.S. with a focus on quality, safety and long-term reliability</p>",
                     "width": "100%",
                     "max_width": "none",
                     "type_preset": "custom",
@@ -830,7 +830,7 @@
                     "line_height": "body-normal",
                     "letter_spacing": "normal",
                     "case": "none",
-                    "color": "var(--color-foreground)"
+                    "color": "var(--color-foreground-heading)"
                   }
                 }
               },
@@ -838,17 +838,10 @@
                 "heading",
                 "description"
               ]
-            },
-            "pills": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "<style>.rit-pills{display:flex;flex-wrap:wrap;gap:12px}.rit-pill{display:inline-flex;align-items:center;justify-content:center;background:#151515;border:1px solid #005695;border-radius:24px;color:#fff;font-size:14px;line-height:20px;padding:4px 16px;font-family:var(--font-body--family)}</style><div class=\"rit-pills\"><span class=\"rit-pill\">RV</span><span class=\"rit-pill\">Trucking</span><span class=\"rit-pill\">Oil &amp; Gas</span><span class=\"rit-pill\">Marine</span><span class=\"rit-pill\">Off-Grid Residential</span><span class=\"rit-pill\">Industrial</span></div>"
-              }
             }
           },
           "block_order": [
-            "text_group",
-            "pills"
+            "text_group"
           ]
         },
         "right_image": {
@@ -865,7 +858,7 @@
             "image_block": {
               "type": "image",
               "settings": {
-                "image": "shopify://shop_images/frame-1597880400-desktop-I6631051663978.png",
+                "image": "shopify://shop_images/frame-1597880400-desktop-I86912469663978.png",
                 "image_ratio": "adapt",
                 "width": "fill"
               }
@@ -887,9 +880,11 @@
         "vertical_alignment": "center",
         "gap": 64,
         "section_width": "page-width",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 0,
+        "padding-inline-start": 64,
+        "padding-inline-end": 64
       }
     },
     "product_carousel_tabs": {
