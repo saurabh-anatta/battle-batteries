@@ -18,14 +18,14 @@
   data-testid="product-hotspots"
   style="
     {% render 'spacing-style', settings: section.settings %}
-    {% render 'gap-style', value: 28 %}
+    {% render 'gap-style', value: section.settings.gap %}
     {% if section.settings.section_height != 'auto' %}
       --ratio: {{ section.settings.section_height }};
     {% elsif section.settings.image != blank %}
       --ratio: {{ section.settings.image.aspect_ratio }};
     {% endif %}
     --product-title-gap: {{ section.settings.product_title_gap }}px;
-    --hotspot-size: 36px;
+    --hotspot-size: 24px;
     --minimum-width-dialog: 260px;
     --maximum-width-dialog: 330px;
     --width-product-image-dialog: 110px;
@@ -152,8 +152,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(var(--hotspot-size) * 0.4);
-    height: calc(var(--hotspot-size) * 0.4);
+    width: calc(var(--hotspot-size) * 0.67);
+    height: calc(var(--hotspot-size) * 0.67);
     background: var(--hotspot-bullseye, #fff);
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -164,8 +164,8 @@
   @media screen and (min-width: 750px) {
     .hotspot:hover .hotspot-trigger::after,
     .hotspot:has(.hotspot-dialog[open]) .hotspot-trigger::after {
-      width: calc(var(--hotspot-size) * 0.55);
-      height: calc(var(--hotspot-size) * 0.55);
+      width: calc(var(--hotspot-size) * 0.8);
+      height: calc(var(--hotspot-size) * 0.8);
       transition: width 0.2s ease-out, height 0.2s ease-out, background 0.2s ease-out;
       transition-delay: 0.2s;
     }
@@ -521,6 +521,16 @@
     {
       "type": "header",
       "content": "t:content.section_layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 28
     },
     {
       "type": "select",

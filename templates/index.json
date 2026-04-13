@@ -853,6 +853,7 @@
         "toggle_overlay": false,
         "section_width": "full-width",
         "section_height": "auto",
+        "gap": 40,
         "hotspot_color": "#C9CAD4",
         "bullseye_color": "#FFFFFF",
         "color_scheme": "scheme-2",
@@ -865,7 +866,12 @@
           "static": true,
           "settings": {
             "text": "<h2>Ready for a more reliable power system?</h2>",
-            "type_preset": "h2",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "2rem",
+            "line_height": "body-normal",
+            "letter_spacing": "tight",
+            "case": "none",
             "alignment": "center",
             "width": "100%",
             "color": "var(--color-foreground-heading)"
