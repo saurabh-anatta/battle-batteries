@@ -7,15 +7,10 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "hero_carousel": {
       "type": "hero-carousel",
-      "settings": {
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "slide_height": "medium"
-      },
       "blocks": {
         "slide_1": {
           "type": "slide",
@@ -53,12 +48,21 @@
           }
         }
       },
-      "block_order": ["slide_1", "slide_2", "slide_3"]
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3"
+      ],
+      "settings": {
+        "slide_height": "medium",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
     },
     "trust_badge": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div style=\"display:flex;justify-content:flex-end;align-items:center;padding-right:40px\"><picture><source media=\"(max-width:749px)\" srcset=\"{{ 'frame-48098271-2.svg' | asset_url }}\"><img src=\"{{ 'frame-48098271.svg' | asset_url }}\" alt=\"Proud American Company\" width=\"264\" height=\"40\" loading=\"lazy\"><\/picture><\/div>",
+        "custom_liquid": "<div style=\"display:flex;justify-content:flex-end;align-items:center;padding-right:40px\"><picture><source media=\"(max-width:749px)\" srcset=\"{{ 'frame-48098271-2.svg' | asset_url }}\"><img src=\"{{ 'frame-48098271.svg' | asset_url }}\" alt=\"Proud American Company\" width=\"264\" height=\"40\" loading=\"lazy\"></picture></div>",
         "color_scheme": "scheme-1",
         "section_width": "page-width",
         "padding-block-start": 20,
@@ -67,16 +71,6 @@
     },
     "image_title_cards": {
       "type": "section",
-      "settings": {
-        "content_direction": "column",
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 40,
-        "section_width": "page-width",
-        "section_height": "",
-        "padding-block-start": 64,
-        "padding-block-end": 64
-      },
       "blocks": {
         "header_group": {
           "type": "group",
@@ -121,7 +115,10 @@
               }
             }
           },
-          "block_order": ["heading", "description"]
+          "block_order": [
+            "heading",
+            "description"
+          ]
         },
         "cards_row": {
           "type": "group",
@@ -186,7 +183,11 @@
                   }
                 }
               },
-              "block_order": ["card_1_title", "card_1_image", "card_1_desc"]
+              "block_order": [
+                "card_1_title",
+                "card_1_image",
+                "card_1_desc"
+              ]
             },
             "card_2": {
               "type": "group",
@@ -240,7 +241,11 @@
                   }
                 }
               },
-              "block_order": ["card_2_title", "card_2_image", "card_2_desc"]
+              "block_order": [
+                "card_2_title",
+                "card_2_image",
+                "card_2_desc"
+              ]
             },
             "card_3": {
               "type": "group",
@@ -294,7 +299,11 @@
                   }
                 }
               },
-              "block_order": ["card_3_title", "card_3_image", "card_3_desc"]
+              "block_order": [
+                "card_3_title",
+                "card_3_image",
+                "card_3_desc"
+              ]
             },
             "card_4": {
               "type": "group",
@@ -348,7 +357,11 @@
                   }
                 }
               },
-              "block_order": ["card_4_title", "card_4_image", "card_4_desc"]
+              "block_order": [
+                "card_4_title",
+                "card_4_image",
+                "card_4_desc"
+              ]
             },
             "card_5": {
               "type": "group",
@@ -402,26 +415,39 @@
                   }
                 }
               },
-              "block_order": ["card_5_title", "card_5_image", "card_5_desc"]
+              "block_order": [
+                "card_5_title",
+                "card_5_image",
+                "card_5_desc"
+              ]
             }
           },
-          "block_order": ["card_1", "card_2", "card_3", "card_4", "card_5"]
+          "block_order": [
+            "card_1",
+            "card_2",
+            "card_3",
+            "card_4",
+            "card_5"
+          ]
         }
       },
-      "block_order": ["header_group", "cards_row"]
+      "block_order": [
+        "header_group",
+        "cards_row"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 40,
+        "section_width": "page-width",
+        "section_height": "",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
     },
     "left_image_text": {
       "type": "section",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "center",
-        "gap": 64,
-        "section_width": "page-width",
-        "padding-block-start": 64,
-        "padding-block-end": 64
-      },
       "blocks": {
         "left_image": {
           "type": "group",
@@ -440,7 +466,9 @@
               }
             }
           },
-          "block_order": ["image_block"]
+          "block_order": [
+            "image_block"
+          ]
         },
         "right_content": {
           "type": "group",
@@ -521,10 +549,16 @@
                       }
                     }
                   },
-                  "block_order": ["feature_1_title", "feature_1_desc"]
+                  "block_order": [
+                    "feature_1_title",
+                    "feature_1_desc"
+                  ]
                 }
               },
-              "block_order": ["feature_1_icon", "feature_1_texts"]
+              "block_order": [
+                "feature_1_icon",
+                "feature_1_texts"
+              ]
             },
             "feature_2": {
               "type": "group",
@@ -581,10 +615,16 @@
                       }
                     }
                   },
-                  "block_order": ["feature_2_title", "feature_2_desc"]
+                  "block_order": [
+                    "feature_2_title",
+                    "feature_2_desc"
+                  ]
                 }
               },
-              "block_order": ["feature_2_icon", "feature_2_texts"]
+              "block_order": [
+                "feature_2_icon",
+                "feature_2_texts"
+              ]
             },
             "feature_3": {
               "type": "group",
@@ -641,10 +681,16 @@
                       }
                     }
                   },
-                  "block_order": ["feature_3_title", "feature_3_desc"]
+                  "block_order": [
+                    "feature_3_title",
+                    "feature_3_desc"
+                  ]
                 }
               },
-              "block_order": ["feature_3_icon", "feature_3_texts"]
+              "block_order": [
+                "feature_3_icon",
+                "feature_3_texts"
+              ]
             },
             "feature_4": {
               "type": "group",
@@ -701,30 +747,44 @@
                       }
                     }
                   },
-                  "block_order": ["feature_4_title", "feature_4_desc"]
+                  "block_order": [
+                    "feature_4_title",
+                    "feature_4_desc"
+                  ]
                 }
               },
-              "block_order": ["feature_4_icon", "feature_4_texts"]
+              "block_order": [
+                "feature_4_icon",
+                "feature_4_texts"
+              ]
             }
           },
-          "block_order": ["heading", "feature_1", "feature_2", "feature_3", "feature_4"]
+          "block_order": [
+            "heading",
+            "feature_1",
+            "feature_2",
+            "feature_3",
+            "feature_4"
+          ]
         }
       },
-      "block_order": ["left_image", "right_content"]
-    },
-    "right_image_text": {
-      "type": "section",
+      "block_order": [
+        "left_image",
+        "right_content"
+      ],
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
+        "horizontal_alignment": "center",
         "vertical_alignment": "center",
         "gap": 64,
         "section_width": "page-width",
-        "color_scheme": "scheme-2",
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      },
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "right_image_text": {
+      "type": "section",
       "blocks": {
         "left_content": {
           "type": "group",
@@ -774,10 +834,15 @@
                   }
                 }
               },
-              "block_order": ["heading", "description"]
+              "block_order": [
+                "heading",
+                "description"
+              ]
             }
           },
-          "block_order": ["text_group"]
+          "block_order": [
+            "text_group"
+          ]
         },
         "right_image": {
           "type": "group",
@@ -795,34 +860,40 @@
               }
             }
           },
-          "block_order": ["image_block"]
+          "block_order": [
+            "image_block"
+          ]
         }
       },
-      "block_order": ["left_content", "right_image"]
+      "block_order": [
+        "left_content",
+        "right_image"
+      ],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "gap": 64,
+        "section_width": "page-width",
+        "color_scheme": "scheme-2",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     },
     "product_carousel_tabs": {
       "type": "product-carousel-tabs",
-      "settings": {
-        "heading": "Explore Best Sellers",
-        "description": "Power lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reliably through the night",
-        "max_products": 4,
-        "columns": 4,
-        "columns_gap": 32,
-        "section_width": "page-width",
-        "padding-block-start": 64,
-        "padding-block-end": 64
-      },
       "blocks": {
         "tab_1": {
           "type": "tab",
           "settings": {
-            "label": "LiFePO\u2084 Batteries"
+            "label": "LiFePO₄ Batteries"
           }
         },
         "tab_2": {
           "type": "tab",
           "settings": {
-            "label": "Smart LiFePO\u2084 Batteries"
+            "label": "Smart LiFePO₄ Batteries"
           }
         },
         "tab_3": {
@@ -844,36 +915,40 @@
           }
         }
       },
-      "block_order": ["tab_1", "tab_2", "tab_3", "tab_4", "tab_5"]
+      "block_order": [
+        "tab_1",
+        "tab_2",
+        "tab_3",
+        "tab_4",
+        "tab_5"
+      ],
+      "settings": {
+        "heading": "Explore Best Sellers",
+        "description": "Power lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reliably through the night",
+        "max_products": 4,
+        "columns": 4,
+        "columns_gap": 32,
+        "section_width": "page-width",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
     },
     "product_hotspots": {
       "type": "product-hotspots",
-      "settings": {
-        "image": "shopify://shop_images/image-7-desktop-I66313036631269.png",
-        "toggle_overlay": false,
-        "section_width": "full-width",
-        "section_height": "auto",
-        "gap": 40,
-        "hotspot_color": "#C9CAD4",
-        "bullseye_color": "#FFFFFF",
-        "color_scheme": "scheme-2",
-        "padding-block-start": 64,
-        "padding-block-end": 0
-      },
       "blocks": {
         "heading": {
           "type": "text",
           "static": true,
           "settings": {
             "text": "<h2>Ready for a more reliable power system?</h2>",
+            "width": "100%",
+            "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "2rem",
             "line_height": "body-normal",
             "letter_spacing": "tight",
             "case": "none",
-            "alignment": "center",
-            "width": "100%",
             "color": "var(--color-foreground-heading)"
           }
         },
@@ -899,26 +974,25 @@
           }
         }
       },
-      "block_order": ["hotspot_1", "hotspot_2", "hotspot_3"]
+      "block_order": [
+        "hotspot_1",
+        "hotspot_2",
+        "hotspot_3"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/image-7-desktop-I66313036631269.png",
+        "toggle_overlay": false,
+        "section_width": "full-width",
+        "section_height": "auto",
+        "hotspot_color": "#C9CAD4",
+        "bullseye_color": "#FFFFFF",
+        "color_scheme": "scheme-2",
+        "padding-block-start": 64,
+        "padding-block-end": 0
+      }
     },
     "content_carousel": {
       "type": "featured-blog-posts",
-      "settings": {
-        "layout_type": "carousel",
-        "post_limit": 6,
-        "columns": 4,
-        "columns_gap": 32,
-        "mobile_card_size": "60cqw",
-        "icons_style": "arrows_large",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 40,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 64,
-        "padding-block-end": 64,
-        "button_label": "Read our blog",
-        "button_link": "/blogs"
-      },
       "blocks": {
         "static-blog-title": {
           "type": "_featured-blog-posts-title",
@@ -957,12 +1031,12 @@
               "type": "_heading",
               "static": true,
               "settings": {
-                "text": "<h4>{{ closest.article.title }}</h4>",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
                 "font_size": "1rem",
                 "line_height": "tight",
                 "color": "var(--color-foreground-heading)",
+                "text": "<h4>{{ closest.article.title }}</h4>",
                 "show_alignment": false
               }
             },
@@ -972,9 +1046,9 @@
               "settings": {
                 "show_date": false,
                 "show_author": false,
+                "show_alignment": false,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
-                "show_alignment": false
+                "padding-block-end": 0
               }
             },
             "blog-post-description": {
@@ -987,21 +1061,26 @@
             }
           }
         }
+      },
+      "settings": {
+        "button_label": "Read our blog",
+        "button_link": "/blogs",
+        "layout_type": "carousel",
+        "post_limit": 6,
+        "columns": 4,
+        "mobile_card_size": "60cqw",
+        "columns_gap": 32,
+        "icons_style": "arrows_large",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 40,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {
-        "star_rating": "4.6",
-        "star_label": "Stars",
-        "heading": "400,000+ LiFePO4 Battery Packs In the Field",
-        "description": "Power Lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reilably through the night",
-        "background_color": "#F2F2F2",
-        "active_tab_color": "#081D4D",
-        "section_width": "full-width",
-        "padding-block-start": 64,
-        "padding-block-end": 64
-      },
       "blocks": {
         "tab_rv": {
           "type": "tab",
@@ -1052,7 +1131,7 @@
         "testimonial_2": {
           "type": "testimonial",
           "settings": {
-            "quote": "That\u2019s where my passion for coffee really took root. Once again, I found myself camping.",
+            "quote": "That’s where my passion for coffee really took root. Once again, I found myself camping.",
             "reviewer_name": "Mt. McKinley",
             "reviewer_label": "Verified Reviewer",
             "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
@@ -1062,7 +1141,7 @@
         "testimonial_3": {
           "type": "testimonial",
           "settings": {
-            "quote": "I\u2019ve got over 70 and have never had one of these batteries go bad",
+            "quote": "I’ve got over 70 and have never had one of these batteries go bad",
             "reviewer_name": "Rick Harrison",
             "reviewer_label": "Verified Reviewer",
             "product_name": "100Ah 12V LiFePO4 Deep Cycle Battery",
@@ -1080,8 +1159,40 @@
           }
         }
       },
-      "block_order": ["tab_rv", "tab_marine", "tab_trucking", "tab_industrial", "tab_lead_acid", "tab_american", "testimonial_1", "testimonial_2", "testimonial_3", "testimonial_4"]
+      "block_order": [
+        "tab_rv",
+        "tab_marine",
+        "tab_trucking",
+        "tab_industrial",
+        "tab_lead_acid",
+        "tab_american",
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3",
+        "testimonial_4"
+      ],
+      "settings": {
+        "star_rating": "4.6",
+        "star_label": "Stars",
+        "heading": "400,000+ LiFePO4 Battery Packs In the Field",
+        "description": "Power Lights, fans, furnace, water pump, refrigerator, satellite Internet & everyday essentials reilably through the night",
+        "background_color": "#F2F2F2",
+        "active_tab_color": "#081D4D",
+        "section_width": "full-width",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
     }
   },
-  "order": ["hero_carousel", "trust_badge", "image_title_cards", "left_image_text", "right_image_text", "product_carousel_tabs", "product_hotspots", "content_carousel", "testimonials"]
+  "order": [
+    "hero_carousel",
+    "trust_badge",
+    "image_title_cards",
+    "left_image_text",
+    "right_image_text",
+    "product_carousel_tabs",
+    "product_hotspots",
+    "content_carousel",
+    "testimonials"
+  ]
 }
