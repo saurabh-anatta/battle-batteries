@@ -62,7 +62,7 @@
     "trust_badge": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div style=\"display:flex;justify-content:flex-end;align-items:center;padding-right:40px\"><picture><source media=\"(max-width:749px)\" srcset=\"{{ 'frame-48098271-2.svg' | asset_url }}\"><img src=\"{{ 'frame-48098271.svg' | asset_url }}\" alt=\"Proud American Company\" width=\"264\" height=\"40\" loading=\"lazy\"></picture></div>",
+        "custom_liquid": "<div style=\"display:flex;justify-content:center;align-items:center\"><picture><source media=\"(max-width:749px)\" srcset=\"{{ 'frame-48098271-2.svg' | asset_url }}\"><img src=\"{{ 'frame-48098271.svg' | asset_url }}\" alt=\"Proud American Company\" width=\"264\" height=\"40\" loading=\"lazy\"></picture></div>",
         "color_scheme": "scheme-1",
         "section_width": "page-width",
         "padding-block-start": 20,
