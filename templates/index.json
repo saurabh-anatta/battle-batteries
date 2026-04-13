@@ -1008,7 +1008,7 @@
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "2rem",
-            "line_height": "tight",
+            "line_height": "normal",
             "letter_spacing": "tight",
             "color": "var(--color-foreground-heading)"
           }
@@ -1028,7 +1028,8 @@
               "type": "_featured-blog-posts-image",
               "static": true,
               "settings": {
-                "image_ratio": "landscape"
+                "image_ratio": "square",
+                "border_radius": 4
               }
             },
             "title": {
@@ -1038,7 +1039,7 @@
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
                 "font_size": "1rem",
-                "line_height": "tight",
+                "line_height": "normal",
                 "color": "var(--color-foreground-heading)",
                 "text": "<h4>{{ closest.article.title }}</h4>",
                 "show_alignment": false
