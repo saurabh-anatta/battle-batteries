@@ -1,0 +1,801 @@
+{% liquid
+  assign slide_blocks = section.blocks | where: 'type', 'slide'
+  assign slide_count = slide_blocks.size
+  assign autoplay = section.settings.autoplay
+  assign autoplay_speed = section.settings.autoplay_speed
+  assign slide_height = section.settings.slide_height
+%}
+
+<div
+  class="hero-carousel-section section--full-width color-{{ section.settings.color_scheme }}"
+  style="{% render 'spacing-padding', settings: section.settings %}"
+>
+  <hero-carousel-component
+    class="hero-carousel"
+    role="region"
+    aria-roledescription="carousel"
+    aria-label="{{ section.settings.accessible_label | default: 'Hero carousel' }}"
+    data-autoplay="{{ autoplay }}"
+    data-autoplay-speed="{{ autoplay_speed }}"
+    tabindex="0"
+  >
+    <div
+      class="hero-carousel__slides-viewport hero-carousel__slides-viewport--{{ slide_height }}"
+    >
+      <div
+        class="hero-carousel__slides"
+        data-hero-slides
+        aria-live="{% if autoplay %}off{% else %}polite{% endif %}"
+      >
+        {% for block in slide_blocks %}
+          <div
+            class="hero-carousel__slide"
+            data-hero-slide="{{ forloop.index0 }}"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Slide {{ forloop.index }} of {{ slide_count }}"
+            {% if forloop.first %}
+              aria-hidden="false"
+            {% else %}
+              aria-hidden="true"
+              inert
+            {% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <div class="hero-carousel__slide-media">
+              {% if block.settings.image_1 != blank %}
+                {% liquid
+                  assign sizes_val = '100vw'
+                  assign img_loading = 'lazy'
+                  assign img_fetchpriority = 'auto'
+                  if forloop.first
+                    assign img_loading = 'eager'
+                    assign img_fetchpriority = 'high'
+                  endif
+                %}
+                {{
+                  block.settings.image_1
+                  | image_url: width: block.settings.image_1.width
+                  | image_tag:
+                    sizes: sizes_val,
+                    widths: '375,550,750,1100,1500,1780,2000,2400',
+                    loading: img_loading,
+                    fetchpriority: img_fetchpriority,
+                    class: 'hero-carousel__slide-image',
+                    alt: block.settings.image_1.alt
+                }}
+              {% else %}
+                <div class="hero-carousel__slide-placeholder">
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-carousel__placeholder-svg' }}
+                </div>
+              {% endif %}
+              {% if block.settings.toggle_overlay %}
+                <div
+                  class="hero-carousel__slide-overlay"
+                  style="--hero-overlay-color: {{ block.settings.overlay_color | default: '#000000' }};"
+                ></div>
+              {% endif %}
+            </div>
+
+            <div class="hero-carousel__slide-content">
+              {% if block.settings.show_trust_badge and block.settings.trust_text != blank %}
+                <div class="hero-carousel__trust-row">
+                  <span class="hero-carousel__trust-stars">
+                    {{ '4-stars-and-up.svg' | inline_asset_content }}
+                  </span>
+                  <span class="hero-carousel__trust-text">
+                    {{- block.settings.trust_text | escape -}}
+                  </span>
+                </div>
+              {% endif %}
+
+              {% if block.settings.heading != blank %}
+                <h2 class="hero-carousel__heading">
+                  {{- block.settings.heading | escape -}}
+                </h2>
+              {% endif %}
+
+              {% if block.settings.subheading != blank %}
+                <p class="hero-carousel__subheading">
+                  {{- block.settings.subheading | escape -}}
+                </p>
+              {% endif %}
+
+              {% if block.settings.button_label != blank %}
+                <a
+                  {% if block.settings.button_link != blank %}
+                    href="{{ block.settings.button_link }}"
+                  {% else %}
+                    role="link"
+                    aria-disabled="true"
+                  {% endif %}
+                  class="hero-carousel__button"
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if slide_count > 1 %}
+      <div class="hero-carousel__controls">
+        <div class="hero-carousel__thumbnails-wrapper">
+          <div class="hero-carousel__thumbnails" role="tablist" aria-label="Slide navigation">
+            {% for block in slide_blocks %}
+              <button
+                class="hero-carousel__thumbnail{% if forloop.first %} hero-carousel__thumbnail--active{% endif %}"
+                data-hero-thumbnail="{{ forloop.index0 }}"
+                role="tab"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="hero-slide-{{ section.id }}-{{ forloop.index0 }}"
+                aria-label="Go to slide {{ forloop.index }}"
+                type="button"
+              >
+                <span class="hero-carousel__thumbnail-image-wrapper">
+                  {% if block.settings.image_1 != blank %}
+                    {{
+                      block.settings.image_1
+                      | image_url: width: 222
+                      | image_tag:
+                        widths: '111,222',
+                        sizes: '111px',
+                        loading: 'lazy',
+                        class: 'hero-carousel__thumbnail-image',
+                        alt: block.settings.image_1.alt
+                    }}
+                  {% else %}
+                    <span class="hero-carousel__thumbnail-placeholder">
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-carousel__thumb-placeholder-svg' }}
+                    </span>
+                  {% endif %}
+                </span>
+                <span class="hero-carousel__progress-track">
+                  <span class="hero-carousel__progress-fill" data-hero-progress="{{ forloop.index0 }}"></span>
+                </span>
+              </button>
+            {% endfor %}
+
+            {% if autoplay %}
+              <button
+                class="hero-carousel__pause-btn"
+                data-hero-pause
+                type="button"
+                aria-label="Stop slide rotation"
+              >
+                <span data-icon-pause>
+                  {{- 'icon-pause.svg' | inline_asset_content -}}
+                </span>
+                <span data-icon-play style="display: none;">
+                  {{- 'icon-play.svg' | inline_asset_content -}}
+                </span>
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </hero-carousel-component>
+</div>
+
+<script src="{{ 'hero-carousel.js' | asset_url }}" type="module" defer></script>
+
+{% stylesheet %}
+  .hero-carousel-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-carousel {
+    display: block;
+    position: relative;
+    width: 100%;
+    outline: none;
+  }
+
+  .hero-carousel__slides-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-carousel__slides-viewport--small {
+    height: 350px;
+
+    @media screen and (min-width: 750px) {
+      height: 450px;
+    }
+  }
+
+  .hero-carousel__slides-viewport--medium {
+    height: 420px;
+
+    @media screen and (min-width: 750px) {
+      height: 560px;
+    }
+  }
+
+  .hero-carousel__slides-viewport--large {
+    height: 500px;
+
+    @media screen and (min-width: 750px) {
+      height: 700px;
+    }
+  }
+
+  .hero-carousel__slides-viewport--auto {
+    height: auto;
+    aspect-ratio: 1440 / 560;
+
+    @media screen and (max-width: 749px) {
+      aspect-ratio: 375 / 420;
+    }
+  }
+
+  .hero-carousel__slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .hero-carousel__slide {
+    position: relative;
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  .hero-carousel__slide-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-carousel__slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-carousel__slide-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-carousel__placeholder-svg {
+    width: 50%;
+    height: auto;
+    opacity: 0.4;
+  }
+
+  .hero-carousel__slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--hero-overlay-color, rgba(0, 0, 0, 0.5)) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .hero-carousel__slide-content {
+    position: absolute;
+    inset-block-end: 80px;
+    inset-inline-start: 0;
+    padding-inline: var(--padding-xl, 2rem);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs, 0.5rem);
+    z-index: 2;
+
+    @media screen and (min-width: 750px) {
+      inset-block-end: 120px;
+      padding-inline-start: var(--padding-3xl, 3rem);
+      gap: var(--gap-xs, 0.5rem);
+    }
+
+    @media screen and (min-width: 990px) {
+      inset-block-end: 100px;
+      padding-inline-start: 64px;
+      max-width: 500px;
+    }
+  }
+
+  .hero-carousel__trust-row {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs, 0.5rem);
+  }
+
+  .hero-carousel__trust-stars {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .hero-carousel__trust-stars svg {
+    width: 88px;
+    height: 16px;
+    display: block;
+  }
+
+  .hero-carousel__trust-text {
+    font-family: var(--font-body--family, sans-serif);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .hero-carousel__heading {
+    font-family: var(--font-heading--family, sans-serif);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0;
+
+    @media screen and (min-width: 750px) {
+      font-size: 40px;
+      line-height: 1.3;
+    }
+
+    @media screen and (min-width: 990px) {
+      font-size: 48px;
+      line-height: 67px;
+    }
+  }
+
+  .hero-carousel__subheading {
+    font-family: var(--font-body--family, sans-serif);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 0;
+
+    @media screen and (min-width: 750px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .hero-carousel__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 236px;
+    max-width: 100%;
+    padding: 4px 24px;
+    background-color: #ffffff;
+    color: #151515;
+    border: 1px solid #02267E;
+    border-radius: 4px;
+    font-family: var(--font-body--family, sans-serif);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    gap: var(--gap-2xs, 0.25rem);
+    margin-block-start: var(--padding-sm, 0.75rem);
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #02267E;
+      outline-offset: 2px;
+    }
+
+    @media screen and (min-width: 990px) {
+      margin-block-start: var(--padding-md, 1rem);
+    }
+  }
+
+  .hero-carousel__controls {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    padding-block-start: 0;
+    margin-block-start: -32px;
+    z-index: 3;
+
+    @media screen and (max-width: 749px) {
+      margin-block-start: -24px;
+    }
+  }
+
+  .hero-carousel__thumbnails-wrapper {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 64px;
+
+    @media screen and (max-width: 749px) {
+      padding-inline-start: 16px;
+    }
+  }
+
+  .hero-carousel__thumbnails {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+  }
+
+  .hero-carousel__thumbnail {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    &:focus-visible {
+      outline: 2px solid #02267E;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  .hero-carousel__thumbnail-image-wrapper {
+    display: block;
+    width: 111px;
+    height: 65px;
+    border-radius: 4px;
+    border: 1px solid #C9CAD4;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+
+    @media screen and (max-width: 749px) {
+      width: 80px;
+      height: 47px;
+    }
+  }
+
+  .hero-carousel__thumbnail--active .hero-carousel__thumbnail-image-wrapper {
+    border-color: #02267E;
+  }
+
+  .hero-carousel__thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-carousel__thumbnail-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+  }
+
+  .hero-carousel__thumb-placeholder-svg {
+    width: 60%;
+    height: auto;
+    opacity: 0.4;
+  }
+
+  .hero-carousel__progress-track {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #C9CAD4;
+    border-radius: 0 0 2px 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-carousel__progress-fill {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: #02267E;
+    border-radius: 0 0 2px 2px;
+  }
+
+  .hero-carousel__progress-fill--active {
+    animation: heroProgressFill linear forwards;
+  }
+
+  .hero-carousel__progress-fill--done {
+    width: 100%;
+  }
+
+  @keyframes heroProgressFill {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .hero-carousel__pause-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #ffffff;
+    flex-shrink: 0;
+    position: absolute;
+    top: calc(65px / 2);
+    transform: translateY(-50%);
+    left: var(--pause-btn-left, 0px);
+    z-index: 2;
+    pointer-events: auto;
+    transition: left 0.3s ease;
+
+    @media screen and (max-width: 749px) {
+      top: calc(47px / 2);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #02267E;
+      outline-offset: 2px;
+    }
+
+    @media screen and (max-width: 749px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .hero-carousel__pause-btn svg {
+    width: 14px;
+    height: 14px;
+
+    @media screen and (max-width: 749px) {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-carousel__slides {
+      transition: none;
+    }
+
+    .hero-carousel__progress-fill--active {
+      animation: none;
+      width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.hero_carousel",
+  "class": "hero-carousel-wrapper",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "slide_height",
+      "label": "t:settings.media_height",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:options.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:options.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.large"
+        },
+        {
+          "value": "auto",
+          "label": "t:options.auto"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:settings.auto_rotate_slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "t:settings.speed",
+      "min": 3,
+      "max": 7,
+      "step": 1,
+      "unit": "s",
+      "default": 5,
+      "visible_if": "{{ section.settings.autoplay }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "primary"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:names.slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:settings.heading",
+          "default": "Slide heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:settings.subheading",
+          "default": "Add a subheading for this slide."
+        },
+        {
+          "type": "header",
+          "content": "t:content.content"
+        },
+        {
+          "type": "text",
+          "id": "trust_text",
+          "label": "t:settings.trust_text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_trust_badge",
+          "label": "t:settings.show_trust_badge",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:settings.button_label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:settings.button_link"
+        },
+        {
+          "type": "header",
+          "content": "t:content.media"
+        },
+        {
+          "type": "checkbox",
+          "id": "toggle_overlay",
+          "label": "t:settings.toggle_overlay",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "t:settings.overlay_color",
+          "default": "#000000",
+          "visible_if": "{{ block.settings.toggle_overlay }}"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.hero_carousel",
+      "category": "t:categories.banners",
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "slide_height": "medium"
+      },
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Conquer Every Climate.",
+            "subheading": "Reliable lithium power in the harshest conditions.",
+            "trust_text": "Trusted by over 5 million users",
+            "show_trust_badge": true,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Built to Last",
+            "subheading": "Premium lithium batteries for every adventure.",
+            "show_trust_badge": false,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Power Without Limits",
+            "subheading": "Go further with reliable energy solutions.",
+            "show_trust_badge": false,
+            "button_label": "Shop now",
+            "toggle_overlay": true,
+            "overlay_color": "#000000"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

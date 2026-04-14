@@ -1,0 +1,286 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="promo-bar section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  style="
+    --promo-bar-padding-top: {{ section.settings.padding-block-start }}px;
+    --promo-bar-padding-bottom: {{ section.settings.padding-block-end }}px;
+  "
+>
+  <div class="promo-bar__inner">
+    <div class="promo-bar__primary">
+      {%- if section.settings.primary_text != blank -%}
+        <span class="promo-bar__text">{{ section.settings.primary_text }}</span>
+      {%- endif -%}
+      {%- if section.settings.primary_link_text != blank -%}
+        <a
+          class="promo-bar__link"
+          {% if section.settings.primary_link != blank %}
+            href="{{ section.settings.primary_link }}"
+          {% endif %}
+        >
+          {{- section.settings.primary_link_text -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="promo-bar__secondary">
+      {%- if section.settings.show_location_link and section.settings.location_text != blank -%}
+        <a
+          class="promo-bar__secondary-link"
+          {% if section.settings.location_link != blank %}
+            href="{{ section.settings.location_link }}"
+          {% endif %}
+        >
+          <span class="promo-bar__icon svg-wrapper">
+            {{- 'marker-02.svg' | inline_asset_content -}}
+          </span>
+          <span>{{ section.settings.location_text }}</span>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_commercial_link and section.settings.commercial_text != blank -%}
+        <a
+          class="promo-bar__secondary-link"
+          {% if section.settings.commercial_link != blank %}
+            href="{{ section.settings.commercial_link }}"
+          {% endif %}
+        >
+          {{- section.settings.commercial_text -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .promo-bar {
+    padding-block-start: var(--promo-bar-padding-top, 11px);
+    padding-block-end: var(--promo-bar-padding-bottom, 11px);
+  }
+
+  .promo-bar__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: var(--gap-xs);
+  }
+
+  @media screen and (min-width: 990px) {
+    .promo-bar__inner {
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    .promo-bar__primary {
+      grid-column: 2;
+    }
+
+    .promo-bar__secondary {
+      grid-column: 3;
+      justify-self: end;
+      gap: 32px;
+    }
+  }
+
+  .promo-bar__primary {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xs);
+  }
+
+  .promo-bar__text {
+    font-family: var(--font-body--family);
+    font-weight: var(--font-body--weight);
+    font-size: 0.75rem;
+    line-height: 17px;
+  }
+
+  .promo-bar__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading--family);
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 17px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding-inline: var(--padding-xs);
+    white-space: nowrap;
+    color: inherit;
+  }
+
+  .promo-bar__link:hover {
+    opacity: 0.8;
+  }
+
+  .promo-bar__secondary {
+    display: none;
+    align-items: center;
+    gap: var(--gap-md);
+  }
+
+  @media screen and (min-width: 990px) {
+    .promo-bar__secondary {
+      display: flex;
+    }
+  }
+
+  .promo-bar__secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-body--family);
+    font-weight: var(--font-body--weight);
+    font-size: 0.75rem;
+    line-height: 17px;
+    text-align: center;
+    text-decoration: underline;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  .promo-bar__secondary-link:hover {
+    opacity: 0.8;
+  }
+
+  .promo-bar__icon {
+    display: inline-flex;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+  }
+
+  .promo-bar__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.promo_bar",
+  "tag": "div",
+  "class": "promo-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:content.content"
+    },
+    {
+      "type": "text",
+      "id": "primary_text",
+      "label": "t:settings.primary_text",
+      "default": "FREE Ground Shipping"
+    },
+    {
+      "type": "text",
+      "id": "primary_link_text",
+      "label": "t:settings.primary_link_text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "t:settings.primary_link"
+    },
+    {
+      "type": "header",
+      "content": "t:content.links"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_location_link",
+      "label": "t:settings.show_location_link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "location_text",
+      "label": "t:settings.location_text",
+      "default": "Find a Dealer/Installer"
+    },
+    {
+      "type": "url",
+      "id": "location_link",
+      "label": "t:settings.location_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_commercial_link",
+      "label": "t:settings.show_commercial_link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "commercial_text",
+      "label": "t:settings.commercial_text",
+      "default": "Commercial Sales"
+    },
+    {
+      "type": "url",
+      "id": "commercial_link",
+      "label": "t:settings.commercial_link"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-5"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.promo_bar"
+    }
+  ]
+}
+{% endschema %}
