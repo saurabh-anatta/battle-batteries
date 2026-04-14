@@ -82,6 +82,36 @@
       grid-column: 1 / -1;
     }
   }
+
+  /* Footer menu heading typography override — Figma: 14px/25px uppercase */
+  .footer-content .menu__heading {
+    font-size: 0.875rem;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+
+  /* Footer menu link typography override — Figma: 12px/17px */
+  .footer-content .menu__item a {
+    font-size: 0.75rem;
+    line-height: 17px;
+  }
+
+  /* Social icons gap override — Figma: gap:16px */
+  .footer-content .social-icons__wrapper {
+    gap: 16px;
+  }
+
+  /* Brand column mobile centering — Figma mobile: centered logo + description */
+  @media screen and (max-width: 749px) {
+    .footer-content > .group-block:first-child {
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-content > .group-block:first-child .text-block {
+      text-align: center;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}

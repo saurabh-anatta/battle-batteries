@@ -539,6 +539,28 @@
     gap: 24px;
   }
 
+  .header-phone-cta {
+    background-color: #F4F4F6;
+    border-radius: 48px;
+    padding: 4px 24px;
+    font-family: var(--font-heading--family);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #151515;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .header-phone-cta {
+      display: none;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .header-actions--text {
       gap: var(--header-actions-gap);

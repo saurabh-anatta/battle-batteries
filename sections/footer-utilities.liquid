@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
-    text-wrap: nowrap;
+    text-wrap: wrap;
     border-top: var(--border-width) solid var(--color-border);
     color: var(--color-foreground-muted);
 
@@ -59,14 +59,14 @@
       text-align: left;
     }
 
-    /* 2 blocks: Two equal columns, start and end aligned */
+    /* 2 blocks: Stacked vertically to match Figma (copyright above policy links) */
     .utilities--blocks-2 {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
 
     .utilities--blocks-2 > *:nth-child(2) {
-      justify-self: end;
-      text-align: right;
+      justify-self: start;
+      text-align: left;
     }
 
     /* 3 blocks: Three columns (1fr auto 1fr), start/center/end aligned */

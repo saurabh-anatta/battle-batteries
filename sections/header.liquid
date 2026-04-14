@@ -1088,6 +1088,17 @@
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
   }
+
+  /* Header shadow matching Figma design */
+  .header-section {
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Header bottom border color override to match Figma #F2F2F2 */
+  .header__row--bottom,
+  .header__row--top .header__columns {
+    border-bottom-color: #F2F2F2;
+  }
 {% endstylesheet %}
 
 {% unless request.design_mode %}

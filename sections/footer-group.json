@@ -74,9 +74,9 @@
             "menu": "footer-shop",
             "heading": "Shop",
             "menu_spacing": 12,
-            "show_as_accordion": false,
+            "show_as_accordion": true,
             "inherit_color_scheme": true,
-            "heading_preset": "h3",
+            "heading_preset": "h5",
             "link_preset": "paragraph",
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -90,9 +90,9 @@
             "menu": "footer-support",
             "heading": "Support",
             "menu_spacing": 12,
-            "show_as_accordion": false,
+            "show_as_accordion": true,
             "inherit_color_scheme": true,
-            "heading_preset": "h3",
+            "heading_preset": "h5",
             "link_preset": "paragraph",
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -125,9 +125,9 @@
                 "menu": "footer-about",
                 "heading": "About",
                 "menu_spacing": 12,
-                "show_as_accordion": false,
+                "show_as_accordion": true,
                 "inherit_color_scheme": true,
-                "heading_preset": "h3",
+                "heading_preset": "h5",
                 "link_preset": "paragraph",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
@@ -183,131 +183,229 @@
                 "padding-inline-end": 0
               }
             },
-            "contact_phone": {
-              "type": "text",
+            "phone_hours_group": {
+              "type": "group",
               "settings": {
-                "text": "<p><strong>855-292-2831</strong></p>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "contact_hours": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Mon - Fri: 8:00am to 4:30pm PST</p>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "contact_email": {
-              "type": "text",
-              "settings": {
-                "text": "<p>info@battlebornbatters.com</p>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "contact_address": {
-              "type": "text",
-              "settings": {
-                "text": "<p>12915 Old Virginia Rd. Reno, NV 89521</p>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "contact_app": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Download the Battle Born App</p>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "signup_heading": {
-              "type": "text",
-              "settings": {
-                "text": "<h3>Join our email list</h3>",
-                "width": "100%",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-heading--family)",
-                "font_size": "0.875rem",
-                "line_height": "normal",
-                "case": "none",
-                "color": "var(--color-foreground-heading)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
-            "signup_form": {
-              "type": "email-signup",
-              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "flex-start",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 4,
                 "width": "fill",
-                "inherit_color_scheme": true
-              }
+                "height": "fit",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "contact_phone": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p><strong>855-292-2831</strong></p>",
+                    "width": "100%",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "contact_hours": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Mon - Fri: 8:00am to 4:30pm PST</p>",
+                    "width": "100%",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["contact_phone", "contact_hours"]
+            },
+            "email_address_group": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "flex-start",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 4,
+                "width": "fill",
+                "height": "fit",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "contact_email": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>info@battlebornbatters.com</p>",
+                    "width": "100%",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "contact_address": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>12915 Old Virginia Rd. Reno, NV 89521</p>",
+                    "width": "100%",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["contact_email", "contact_address"]
+            },
+            "app_download_group": {
+              "type": "group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": false,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "gap": 8,
+                "width": "fill",
+                "height": "fit",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "app_icon": {
+                  "type": "image",
+                  "settings": {
+                    "image": "shopify://shop_images/rectangle-desktop-footer-I80730118072165.png",
+                    "width": "custom",
+                    "custom_width": 32,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "app_text": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Download the Battle Born App</p>",
+                    "width": "fill",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.75rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                }
+              },
+              "block_order": ["app_icon", "app_text"]
+            },
+            "signup_group": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "flex-start",
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 8,
+                "width": "fill",
+                "height": "fit",
+                "inherit_color_scheme": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "signup_heading": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Join our email list</h3>",
+                    "width": "100%",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-heading--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground-heading)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  }
+                },
+                "signup_form": {
+                  "type": "email-signup",
+                  "settings": {
+                    "width": "fill",
+                    "inherit_color_scheme": true,
+                    "border_style": "underline",
+                    "border_radius": 8,
+                    "border_width": 1
+                  }
+                }
+              },
+              "block_order": ["signup_heading", "signup_form"]
             }
           },
           "block_order": [
             "contact_heading",
-            "contact_phone",
-            "contact_hours",
-            "contact_email",
-            "contact_address",
-            "contact_app",
-            "signup_heading",
-            "signup_form"
+            "phone_hours_group",
+            "email_address_group",
+            "app_download_group",
+            "signup_group"
           ]
         }
       },
@@ -342,6 +440,9 @@
           "type": "footer-copyright",
           "settings": {
             "show_powered_by": false,
+            "show_country": true,
+            "country_name": "United States",
+            "country_flag": "shopify://shop_images/o1f13a-desktop-footer-I80730118072088.png",
             "font_size": "0.75rem",
             "case": "none"
           }
@@ -349,6 +450,8 @@
         "policy_list": {
           "type": "footer-policy-list",
           "settings": {
+            "display_mode": "flat",
+            "menu": "footer-policies",
             "font_size": "0.625rem",
             "case": "none"
           }

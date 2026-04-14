@@ -1,48 +1,96 @@
-{% if shop.policies.size > 0 %}
-  <anchored-popover-component
-    data-hover-triggered="true"
-  >
-    <button
-      class="policy-list-trigger button-unstyled"
-      popovertarget="terms-policies-popover"
-      popovertargetaction="toggle"
-      ref="trigger"
+{%- if block.settings.display_mode == 'flat' -%}
+  {%- assign policy_menu = linklists[block.settings.menu] -%}
+  {%- if policy_menu != blank and policy_menu.links.size > 0 -%}
+    <div
+      class="policy-list-flat custom-typography {% if block.settings.font_size != '' %}custom-font-size{% endif %}"
       style="{% render 'typography-style', preset: 'custom', settings: block.settings %}"
       {{ block.shopify_attributes }}
     >
-      {{ 'content.terms_and_policies' | t }}
-    </button>
-    <div
-      class="terms-policies-popover color-{{ settings.popover_color_scheme }}"
-      id="terms-policies-popover"
-      popover="auto"
-      ref="popover"
-    >
-      <ul
-        class="
-          policy_list list-unstyled
-          custom-typography
-          {% if block.settings.font_size != "" %}custom-font-size{% endif %}
-        "
-      >
-        {%- for policy in shop.policies -%}
-          {%- if policy != blank -%}
-            <li>
-              <a
-                href="{{ policy.url }}"
-                class="footer-utilities__text"
-              >
-                {{- policy.title | escape -}}
-              </a>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
+      {%- for link in policy_menu.links -%}
+        <a href="{{ link.url }}" class="policy-list-flat__link footer-utilities__text">
+          {{- link.title | escape -}}
+        </a>
+      {%- endfor -%}
     </div>
-  </anchored-popover-component>
-{% endif %}
+  {%- endif -%}
+{%- else -%}
+  {% if shop.policies.size > 0 %}
+    <anchored-popover-component
+      data-hover-triggered="true"
+    >
+      <button
+        class="policy-list-trigger button-unstyled"
+        popovertarget="terms-policies-popover"
+        popovertargetaction="toggle"
+        ref="trigger"
+        style="{% render 'typography-style', preset: 'custom', settings: block.settings %}"
+        {{ block.shopify_attributes }}
+      >
+        {{ 'content.terms_and_policies' | t }}
+      </button>
+      <div
+        class="terms-policies-popover color-{{ settings.popover_color_scheme }}"
+        id="terms-policies-popover"
+        popover="auto"
+        ref="popover"
+      >
+        <ul
+          class="
+            policy_list list-unstyled
+            custom-typography
+            {% if block.settings.font_size != '' %}custom-font-size{% endif %}
+          "
+        >
+          {%- for policy in shop.policies -%}
+            {%- if policy != blank -%}
+              <li>
+                <a
+                  href="{{ policy.url }}"
+                  class="footer-utilities__text"
+                >
+                  {{- policy.title | escape -}}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </anchored-popover-component>
+  {% endif %}
+{%- endif -%}
 
 {% stylesheet %}
+  .policy-list-flat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .policy-list-flat__link {
+    font-size: 0.75rem;
+    line-height: 17px;
+    color: var(--color-foreground-muted);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .policy-list-flat__link:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 749px) {
+    .policy-list-flat {
+      text-wrap: wrap;
+    }
+
+    .policy-list-flat__link {
+      font-size: 0.625rem;
+      line-height: 16px;
+      white-space: normal;
+    }
+  }
+
   .policy-list-trigger {
     anchor-name: --terms-policies-trigger;
     cursor: pointer;
@@ -145,6 +193,28 @@
   "name": "t:names.policy_list",
   "tag": null,
   "settings": [
+    {
+      "type": "select",
+      "id": "display_mode",
+      "label": "t:settings.display_mode",
+      "options": [
+        {
+          "value": "flat",
+          "label": "t:options.flat"
+        },
+        {
+          "value": "popover",
+          "label": "t:options.popover"
+        }
+      ],
+      "default": "flat"
+    },
+    {
+      "type": "text",
+      "id": "menu",
+      "label": "t:settings.policy_menu",
+      "default": "footer-policies"
+    },
     {
       "type": "paragraph",
       "content": "t:content.manage_policies"
